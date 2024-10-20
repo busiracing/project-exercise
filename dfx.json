@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "xxxxxxxxx_backend": {
+      "build": "python -m kybra xxxxxxxxx_backend src/xxxxxxxxx_backend/src/main.py src/xxxxxxxxx_backend/xxxxxxxxx_backend.did",
+      "candid": "src/xxxxxxxxx_backend/xxxxxxxxx_backend.did",
+      "gzip": true,
+      "post_install": ".kybra/xxxxxxxxx_backend/post_install.sh",
+      "tech_stack": {
+        "cdk": {
+          "kybra": {}
+        },
+        "language": {
+          "python": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".kybra/xxxxxxxxx_backend/xxxxxxxxx_backend.wasm"
+    },
+    "xxxxxxxxx_frontend": {
+      "dependencies": [
+        "xxxxxxxxx_backend"
+      ],
+      "source": [
+        "src/xxxxxxxxx_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "xxxxxxxxx_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
